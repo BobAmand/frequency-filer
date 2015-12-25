@@ -35,8 +35,8 @@ def word_frequency(text):
             count_words[word] += 1
     print("The top 20 words used in the text:\n")
     for k, v in sorted(count_words.items(),
-                       key=lambda x: x[1],  # reverse sort on 2nd tuple [0, 1]
-                       reverse=True)[0:20]:  # top 20 only
+                       key=lambda x: x[1],  # key on second col of tuple [0, 1]
+                       reverse=True)[0:20]:  # reverse sort, top 20 only
         print(k, v)
         return count_words
 
@@ -52,5 +52,14 @@ def main():
     word_frequency(bee_text)           # returns top_list
     f.close()
 
+'''
+The word_frequency_test fails.  I think it is because my main() function
+includes opening/closing the file.  The 'test' script is attempting to
+put other text into the word_frequency() function and the current main()
+is populating the function with "sample.txt".
+
+Will come back and attempt to write an additional function to load data,
+outside of the main() function.
+'''
 
 main()
