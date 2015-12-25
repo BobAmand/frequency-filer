@@ -11,19 +11,19 @@ def word_frequency(text):
     # remove punctuation, all lower case, and split into list:
     total_text = re.sub(r'[^A-Za-z]', ' ', text, flags=0).lower().split()
     total_words = len(total_text)        # Total word count
-    print("total words: {}".format(total_words))
-
-# create a list of unique words
-    unique_words = []         # large volume of text
-    for i in total_text:              # NTS "i" is the word within iso_text.
-        if i not in unique_words:        # NTS changed to 'not in'
-            unique_words.append(i)       # NTS "i" is the word
-
-    print("length of u_words: {}".format(len(unique_words)))
-    print("The first 10 unique words as a test:\n")
-    for i in range(0, 10):  # print a subset to verify list
-        print(unique_words[i], end=', ')
-    print('\n')
+#     print("total words: {}".format(total_words))
+#
+# # create a list of unique words
+#     unique_words = []         # large volume of text
+#     for i in total_text:              # NTS "i" is the word within iso_text.
+#         if i not in unique_words:        # NTS changed to 'not in'
+#             unique_words.append(i)       # NTS "i" is the word
+#
+#     print("length of u_words: {}".format(len(unique_words)))
+#     print("The first 10 unique words as a test:\n")
+#     for i in range(0, 10):  # print a subset to verify list
+#         print(unique_words[i], end=', ')
+#     print('\n')
 
 
 # create a list of word counts against the full text:
@@ -38,7 +38,8 @@ def word_frequency(text):
                        key=lambda x: x[1],  # key on second col of tuple [0, 1]
                        reverse=True)[0:20]:  # reverse sort, top 20 only
         print(k, v)
-        return count_words
+    return count_words
+    #  return count_words)
 
 # # sort the dictionary by the value, high to low[becomes a list w tuples]:
 #     s_dict = sorted(w_dict.items(), key=lambda c: c[1], reverse=True)
